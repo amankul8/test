@@ -6,10 +6,10 @@ services:
     container_name: node_app
     build: './backend'
     ports: 
-      - "3000:3000"
+      - "8000:3000"
 
   frontend:
     container_name: react_app
     build: './frontend'
     ports: 
-      - "8000:3000"
+      - "3000:3000"
