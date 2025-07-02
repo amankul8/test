@@ -6,10 +6,20 @@ services:
     container_name: node_app
     build: './backend'
     ports: 
-      - "8000:3000"
+      - "8000:8000"
+    networks:
+      - app-network
 
   frontend:
     container_name: react_app
     build: './frontend'
     ports: 
       - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
