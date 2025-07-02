@@ -3,9 +3,9 @@ FROM node:22
 
 WORKDIR /var/test_app/frontend
 
-COPY package*.json ./
+# COPY package*.json ./
 
-RUN npm install
+# RUN npm install
 
 COPY . .
 
