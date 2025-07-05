@@ -9,10 +9,12 @@ var logger = require('morgan');
 let indexRouter = require('./routes/index');
 let authRouter = require('./routes/auth');
 let userRouter = require('./routes/user');
-var SQLite = require('./db/sqlite');
+// var SQLite = require('./db/sqlite');
+const connectDB = require('./lib/mongodb');
 
-let sqlite = SQLite.getInstance();
-sqlite.init();
+// let sqlite = SQLite.getInstance();
+// sqlite.init();
+connectDB();
 
 var app = express();
 
